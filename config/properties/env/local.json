@@ -1,0 +1,12 @@
+{
+  "ENV": "LOCAL",
+  "APP_CODE": "1",
+  "PORT": 8081,
+  "APP_NAME": "delivery-of-goods",
+  "DB": {
+    "HOST": "localhost",
+    "DATABASE": "deliveryofgoods",
+    "USER": "root",
+    "PASSWORD": ""
+  }
+}

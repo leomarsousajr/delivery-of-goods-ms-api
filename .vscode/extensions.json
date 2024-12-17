@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "natqe.reload"
+  ],
+  "unwantedRecommendations": ["esbenp.prettier-vscode"]
+}

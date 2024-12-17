@@ -1,0 +1,14 @@
+{
+  "collectCoverage": false,
+  "moduleDirectories": ["node_modules", "src", "<rootDir>"],
+  "moduleFileExtensions": ["js", "json"],
+  "rootDir": ".",
+  "roots": ["<rootDir>/src", "<rootDir>/test/features"],
+  "testPathIgnorePatterns": ["node_modules"],
+  "testTimeout": 10000,
+  "testMatch": ["<rootDir>/test/features/**/*.test.js"],
+  "testEnvironment": "node",
+  "passWithNoTests": true,
+  "globalSetup": "<rootDir>/test/config/globalSetup.js",
+  "setupFilesAfterEnv": ["jest-extended/all", "<rootDir>/test/config/globalHooks.js"]
+}

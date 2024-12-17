@@ -1,0 +1,14 @@
+echo "#NPM AUDIT"
+npm run audit
+
+echo "#NPM TEST"
+npm run test
+
+echo "#NPM COVERAGE"
+npm run coverage
+
+echo "#NPM FORMAT"
+npm run format
+
+echo "#NPM LINT:FIX"
+npm run lint:fix

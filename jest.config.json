@@ -1,0 +1,38 @@
+{
+  "resetMocks": true,
+  "clearMocks": true,
+  "collectCoverage": false,
+  "collectCoverageFrom": ["src/**/*.js"],
+  "coverageDirectory": "coverage",
+  "coveragePathIgnorePatterns": [
+    "src/app/Application.js",
+    "src/interfaces/http/Router.js",
+    "src/interfaces/http/RouterRegister.js",
+    "src/interfaces/http/middlewares/LoggerMiddleware.js",
+    "src/interfaces/http/Server.js",
+    "src/Container.js",
+    "infra/logging/*",
+    "infra/documentation/*",
+    "infra/integrations/rest/HttpClient.js",
+    "infra/integrations/rest/HttpClientHandler.js",
+    "infra/database/mysql/DbConnection.js"
+  ],
+  "coverageProvider": "babel",
+  "coverageReporters": ["json-summary", "text", "lcov"],
+  "coverageThreshold": {
+    "global": {
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
+    }
+  },
+  "moduleDirectories": ["node_modules", "src", "<rootDir>"],
+  "moduleFileExtensions": ["js", "json"],
+  "rootDir": ".",
+  "roots": ["<rootDir>/src", "<rootDir>/test"],
+  "testEnvironment": "node",
+  "testPathIgnorePatterns": ["node_modules"],
+  "setupFilesAfterEnv": ["jest-extended/all"],
+  "testMatch": ["<rootDir>/test/unit/**/*.test.js"]
+}

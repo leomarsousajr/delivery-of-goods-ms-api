@@ -1,0 +1,249 @@
+{
+  "info": {
+    "title": "API swagger",
+    "version": "v1",
+    "description": "Auto generated api swagger"
+  },
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "http://localhost:8081/api"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "description": "Health check",
+        "summary": "Health check",
+        "tags": [
+          "Health"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Failed validation"
+          }
+        },
+        "security": null
+      }
+    },
+    "/orders": {
+      "get": {
+        "description": "Busca todos os pedidos",
+        "summary": "Busca todos os pedidos",
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Failed validation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error_code": {
+                      "type": "string",
+                      "example": "1-500"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Error message"
+                    },
+                    "details": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "example": "\"field\" is required"
+                          },
+                          "path": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "example": [
+                              "field"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "path"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "stack_trace": {
+                      "type": "string",
+                      "example": "Error: Error message\n ..."
+                    }
+                  },
+                  "required": [
+                    "error_code",
+                    "message",
+                    "details"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        },
+        "security": null
+      },
+      "post": {
+        "description": "Criar um Pedido",
+        "summary": "Criar um Pedido",
+        "tags": [
+          "Orders"
+        ],
+        "requestBody": {
+          "description": "Criar um Pedido",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "client_name": {
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 50
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "longitude": {
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 50
+                  },
+                  "latitude": {
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 50
+                  }
+                },
+                "required": [
+                  "client_name",
+                  "date",
+                  "longitude",
+                  "latitude"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": true
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Failed validation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error_code": {
+                      "type": "string",
+                      "example": "1-500"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Error message"
+                    },
+                    "details": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "example": "\"field\" is required"
+                          },
+                          "path": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "example": [
+                              "field"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "message",
+                          "path"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "stack_trace": {
+                      "type": "string",
+                      "example": "Error: Error message\n ..."
+                    }
+                  },
+                  "required": [
+                    "error_code",
+                    "message",
+                    "details"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        },
+        "security": null
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "⚠️ All examples of implementations are here ⚠️",
+    "url": ""
+  },
+  "components": {},
+  "tags": []
+}
